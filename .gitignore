@@ -1,0 +1,4 @@
+# Python 가상환경
+venvs/
+*.pyc
+__pycache__/
