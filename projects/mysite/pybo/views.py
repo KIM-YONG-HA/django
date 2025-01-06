@@ -1,5 +1,14 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Question
+
+# def index(request):
+#     return HttpResponse("hello django!")
+
 
 
 def index(request):
-    return HttpResponse("hello django!")
+    question_list = Question.objects.order_by('-create_date')
+    context = {'question_list': question_list}
+    return render(request, 'pybo/question_list.html')
+
