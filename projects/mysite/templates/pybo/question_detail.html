@@ -5,9 +5,40 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+<form action="{% url 'pybo:answer_create' question.id  %}" method="post">
+
+{% csrf_token %}
+
+<textarea name="content" id="content" row="15"></textarea>
+
+<input type="submit" value="답변등록">
+
+</form>
+
 <ul>
     <li>
         <a href="/pybo">목록</a>
         <a href="">작성</a>
     </li>
 </ul>
+
+<h5><b>{{ question.answer_set.count }}</b>개의 댓글이 있습니다.</h5>
+<div>
+    <ul>
+        {% for answer in question.answer_set.all %}
+        <li>{{ answer.content }}</li>
+        {% endfor %}
+
+    </ul>
+
+</div>
