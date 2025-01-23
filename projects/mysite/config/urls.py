@@ -21,8 +21,9 @@ from pybo import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    #path("pybo/", views.index),
+    path("pybo/", views.index),
     #path('pybo/<int:question_id>/', views.detail)
     path('pybo/', include('pybo.urls')),
-    path('common/', include('common.urls')) #  URL/common/으로 시작하는 url은 모두 common.urls 참조
+    path('common/', include('common.urls')), #  URL/common/으로 시작하는 url은 모두 common.urls 참조
+    path('', views.index, name='index')
 ]
