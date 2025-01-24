@@ -8,6 +8,7 @@
 <form action="{% url 'common:login' %}" method="post">
 
     {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}">
     
     {% include "form_errors.html" %}
 
