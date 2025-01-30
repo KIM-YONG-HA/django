@@ -9,7 +9,8 @@ class Question(models.Model):
     content = models.TextField()
     create_date = models.DateTimeField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-
+    modify_date = models.DateTimeField(null=True, blank=True)
+    
     def __str__(self):
         return self.subject
 
@@ -20,4 +21,5 @@ class Answer(models.Model):
     content = models.TextField()
     create_date = models.DateTimeField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-
+    modify_date = models.DateTimeField(null=True, blank=True)
+    
