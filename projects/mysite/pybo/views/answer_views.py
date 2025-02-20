@@ -73,11 +73,11 @@ def answer_vote(request, answer_id):
         answer.voter.add(request.user)
         messages.success(request, '추천이 완료되었습니다.')
 
-    return redirect('pybo:detail', question_id=answer.question.id)
 
+    return redirect('{}#answer_id{}'.format(
+        resolve_url('pybo:detail', question_id=answer.question.id), answer.id))
+    
     #return HttpResponse('test')
 
     #return redirect('pybo:detail', question_id=answer.question.id)
-    # return redirect('{}#answer_id{}'.format(
-    #     resolve_url('pybo:detail')
-    # ))
+    
