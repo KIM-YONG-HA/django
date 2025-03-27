@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAUM CHECK</title>
+<link rel="stylesheet" href="{% static 'css/common.css' %}">
+
+  <!-- FontAwesome 아이콘 추가 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-white text-gray-900">
+  <!-- Header -->
+  <header class="w-full bg-white border-b border-gray-300">
+    <div class="max-w-[1200px] mx-auto flex items-center justify-between px-4 py-4">
+      <div class="flex items-center space-x-2">
+        <img src="{% static 'img/main/logo.png' %}" alt="MAUM CHECK Logo">
+      </div>
+      <nav class="space-x-6 text-lg font-medium">
+        <a href="#" class="hover:text-blue-600">이용 안내</a>
+        <a href="#" class="hover:text-blue-600">상담 시작</a>
+        <a href="#" class="hover:text-blue-600">자가검진</a>
+        <a href="#" class="hover:text-blue-600">마이페이지</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-white py-32">
+    <div class="max-w-[1200px] mx-auto text-center px-4">
+      <h1 class="text-3xl  md:text-4xl font-bold leading-relaxed">
+        당신의 마음을 분석하고,<br>
+        <span class="text-blue-600">가장 적절한 도움을 드릴게요.</span>
+      </h1>
+      <p class="mt-4 text-gray-600">어떤 방법으로 상담하시겠어요?</p>
+      <div class="mt-8 flex justify-center gap-4">
+        <a href="/counsel" class="w-48 h-16 bg-blue-700 text-white rounded-lg flex items-center justify-center space-x-2 font-bold text-base hover:bg-blue-800 transition duration-200 shadow-md">
+            <i class="fas fa-pencil-alt text-xl"></i>
+            <span>글로 시작하기</span>
+        </a>
+        <a href="#" class="w-48 h-16 bg-orange-500 text-white rounded-lg flex items-center justify-center space-x-2 font-bold text-base hover:bg-orange-400 transition duration-200 shadow-md">
+            <i class="fas fa-microphone text-xl"></i>
+            <span onclick="alert('준비중입니다.')">음성으로 시작하기</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="bg-gray-50 py-24">
+    <div class="max-w-[1200px] mx-auto px-4 text-center">
+        <h2 class="text-2xl font-semibold mb-10">어떻게 작동하나요?</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <div class="text-4xl mb-2 text-gray-600"><i class="fas fa-comments"></i></div>
+            <p class="font-semibold">1. 상담 글 입력</p>
+          </div>
+          <div>
+            <div class="text-4xl mb-2 text-gray-600"><i class="fas fa-brain"></i></div>
+            <p class="font-semibold">2. 감정 상황 분석</p>
+          </div>
+          <div>
+            <div class="text-4xl mb-2 text-gray-600"><i class="fas fa-clipboard-check"></i></div>
+            <p class="font-semibold">3. 자가검진 및 상담 추천</p>
+          </div>
+          <div>
+            <div class="text-4xl mb-2 text-gray-600"><i class="fas fa-phone"></i></div>
+            <p class="font-semibold">4. 맞춤 상담 연결</p>
+          </div>
+        </div>
+      </div>
+      
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#333] text-white py-8">
+    <div class="max-w-[1200px] mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm">© 2025 MAUM CHECK. All rights reserved.</p>
+        <div class="flex space-x-6 text-sm mt-4 md:mt-0">
+          <a href="#" class="hover:underline">이용약관</a>
+          <a href="#" class="hover:underline">개인정보처리방침</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

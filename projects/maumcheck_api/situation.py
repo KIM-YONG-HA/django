@@ -46,6 +46,9 @@ app.logger.info("situation request!")
 CORS(app)  # 전체 도메인 허용
 #CORS(app, resources={r"/emotion": {"origins": "http://vb901217.dothome.co.kr"}})
 
+@app.route('/')
+def hello():
+    return 'hello, situation'
 
 
 import torch

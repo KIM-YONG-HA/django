@@ -51,7 +51,7 @@ CORS(app)  # 전체 도메인 허용
 
 @app.route('/')
 def hello():
-    return 'hello'
+    return 'hello, emotion'
 
 import torch
 import torch.nn as nn

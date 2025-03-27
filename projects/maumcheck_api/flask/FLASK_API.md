@@ -189,3 +189,71 @@ python emotion.py > log/situation.log 2>&1
 python situation.py > log/situation.log 2>&1
 
 ```
+
+
+
+
+
+
+# AWS
+
+
+pip install flask
+pip install flask_cors
+pip install torch torchvision torchaudio
+
+
+
+```
+export FLASK_APP=emotion
+export FLASK_DEBUG=True
+nohup python3 emotion.py > log/emotion.log 2>&1 &
+
+```
+
+
+
+```
+export FLASK_APP=situation
+export FLASK_DEBUG=True
+nohup python3 situation.py > log/situation.log 2>&1 &
+
+```
+
+
+```
+tail -f log/emotion.log
+```
+
+
+```
+# 1. 2GB 스왑 파일 만들기
+sudo fallocate -l 2G /swapfile
+
+# 2. 권한 설정
+sudo chmod 600 /swapfile
+
+# 3. 스왑 영역으로 설정
+sudo mkswap /swapfile
+
+# 4. 스왑 사용 시작
+sudo swapon /swapfile
+
+# 5. 확인
+free -h
+
+```
+
+```
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+```
+
+
+
+
+
+```
+sudo lsof -i :5001
+
+```
