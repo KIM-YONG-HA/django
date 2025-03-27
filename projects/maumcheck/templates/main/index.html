@@ -18,7 +18,7 @@
   <header class="w-full bg-white border-b border-gray-300">
     <div class="max-w-[1200px] mx-auto flex items-center justify-between px-4 py-4">
       <div class="flex items-center space-x-2">
-        <img src="{% static 'img/main/logo.png' %}" alt="MAUM CHECK Logo">
+        <img src="{% static 'img/main/maumcheck_logo.png'%}" alt="MAUM CHECK Logo">
       </div>
       <nav class="space-x-6 text-lg font-medium">
         <a href="#" class="hover:text-blue-600">이용 안내</a>
@@ -29,26 +29,66 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-white py-32">
-    <div class="max-w-[1200px] mx-auto text-center px-4">
-      <h1 class="text-3xl  md:text-4xl font-bold leading-relaxed">
+
+
+
+
+  <section id="visual" class="relative min-h-[95vh] overflow-hidden text-white">
+    <!-- 이미지 1 -->
+    <div id="bg1" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100 z-0"
+         style="background-image: url('{% static '/img/main/visual_bg_01.jpg'%}');"></div>
+  
+    <!-- 이미지 2 -->
+    <div id="bg2" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 z-0"
+         style="background-image: url('{% static '/img/main/visual_bg_02.jpg'%}');"></div>
+  
+    <!-- 이미지 3 -->
+    <div id="bg3" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 z-0"
+         style="background-image: url('{% static '/img/main/visual_bg_03.jpg'%}');"></div>
+  
+    <!-- 반투명 레이어 -->
+    <div class="absolute inset-0 bg-black opacity-75 z-5"></div>
+  
+    <!-- 콘텐츠 -->
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-[95vh] px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold leading-relaxed">
         당신의 마음을 분석하고,<br>
         <span class="text-blue-600">가장 적절한 도움을 드릴게요.</span>
       </h1>
-      <p class="mt-4 text-gray-600">어떤 방법으로 상담하시겠어요?</p>
-      <div class="mt-8 flex justify-center gap-4">
-        <a href="/counsel" class="w-48 h-16 bg-blue-700 text-white rounded-lg flex items-center justify-center space-x-2 font-bold text-base hover:bg-blue-800 transition duration-200 shadow-md">
-            <i class="fas fa-pencil-alt text-xl"></i>
-            <span>글로 시작하기</span>
+      <p class="mt-4 text-gray-200 text-xl">어떤 방법으로 상담하시겠어요?</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/maumcheck/write.html" class="w-48 h-16 bg-blue-700 text-white rounded-lg flex items-center justify-center space-x-2 font-bold text-base hover:bg-blue-800 transition duration-200 shadow-md">
+          <i class="fas fa-pencil-alt text-xl"></i>
+          <span>글로 시작하기</span>
         </a>
-        <a href="#" class="w-48 h-16 bg-orange-500 text-white rounded-lg flex items-center justify-center space-x-2 font-bold text-base hover:bg-orange-400 transition duration-200 shadow-md">
-            <i class="fas fa-microphone text-xl"></i>
-            <span onclick="alert('준비중입니다.')">음성으로 시작하기</span>
+        <a href="#" onclick="alert('준비중입니다.')" class="w-48 h-16 bg-orange-500 text-white rounded-lg flex items-center justify-center space-x-2 font-bold text-base hover:bg-orange-400 transition duration-200 shadow-md">
+          <i class="fas fa-microphone text-xl"></i>
+          <span>음성으로 시작하기</span>
         </a>
       </div>
     </div>
   </section>
+  
+  <script>
+    const bgLayers = [
+      document.getElementById('bg1'),
+      document.getElementById('bg2'),
+      document.getElementById('bg3'),
+    ];
+    let current = 0;
+  
+    setInterval(() => {
+      const prev = current;
+      current = (current + 1) % bgLayers.length;
+  
+      bgLayers[prev].classList.replace('opacity-100', 'opacity-0');
+      bgLayers[current].classList.replace('opacity-0', 'opacity-100');
+    }, 8000);
+  </script>
+  
+  
+
+
 
   <!-- How it works -->
   <section class="bg-gray-50 py-24">
@@ -89,4 +129,6 @@
     </div>
   </footer>
 </body>
+
+
 </html>
