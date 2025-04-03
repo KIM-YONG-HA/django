@@ -2,3 +2,11 @@
 venvs/
 *.pyc
 __pycache__/
+
+
+
+# Ignore all .pth files (Python path files)
+*.pth
+
+# Ignore all .log files (log files)
+*.log
